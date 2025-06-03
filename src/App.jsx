@@ -8,8 +8,9 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-surface-50 via-primary-50 to-secondary-50 dark:from-surface-900 dark:via-surface-800 dark:to-surface-900">
-        <Routes>
+<Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/analytics" element={<AnalyticsDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer

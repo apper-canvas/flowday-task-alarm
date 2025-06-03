@@ -100,7 +100,7 @@ const Home = () => {
               </div>
             </motion.div>
 
-            <div className="flex items-center space-x-2 sm:space-x-4">
+<div className="flex items-center space-x-2 sm:space-x-4">
               {/* Stats Cards - Hidden on mobile */}
               <div className="hidden lg:flex items-center space-x-4">
                 <div className="flex items-center space-x-2 px-3 py-1.5 bg-surface-100 dark:bg-surface-700 rounded-lg">
@@ -112,6 +112,14 @@ const Home = () => {
                   <span className="text-sm font-medium text-green-700 dark:text-green-300">{stats.completed}</span>
                 </div>
               </div>
+
+              <Link
+                to="/analytics"
+                className="p-2 rounded-lg bg-primary-100 dark:bg-primary-900/30 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors group"
+                title="View Analytics"
+              >
+                <ApperIcon name="BarChart3" className="w-4 h-4 sm:w-5 sm:h-5 text-primary-600 group-hover:scale-110 transition-transform" />
+              </Link>
 
               <button
                 onClick={toggleDarkMode}
