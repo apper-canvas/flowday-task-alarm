@@ -22,7 +22,7 @@
     "apexcharts": "^4.6.0",
     "react-apexcharts": "^1.7.0",
     "date-fns": "^2.30.0",
-    "react-notification-api": "^1.1.0"
+    "react-notification-api": "^1.7.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
