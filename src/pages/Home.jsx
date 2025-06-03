@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import MainFeature from '../components/MainFeature'
 import ApperIcon from '../components/ApperIcon'
 import taskService from '../services/api/taskService'
 import categoryService from '../services/api/categoryService'
 import { format, isToday } from 'date-fns'
-
 const Home = () => {
   const [tasks, setTasks] = useState([])
   const [categories, setCategories] = useState([])
