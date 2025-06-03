@@ -509,7 +509,7 @@ const MainFeature = ({ tasks, setTasks, categories, stats, setStats }) => {
                 </div>
               )}
             </div>
-          </motion.div>
+</motion.div>
         </div>
       </div>
     </div>
