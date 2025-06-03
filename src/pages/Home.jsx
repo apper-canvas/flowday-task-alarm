@@ -191,13 +191,20 @@ let reminderCount = 0
               </div>
 
               <Link
+                to="/calendar"
+                className="p-2 rounded-lg bg-secondary-100 dark:bg-secondary-900/30 hover:bg-secondary-200 dark:hover:bg-secondary-900/50 transition-colors group"
+                title="Calendar View"
+              >
+                <ApperIcon name="Calendar" className="w-4 h-4 sm:w-5 sm:h-5 text-secondary-600 group-hover:scale-110 transition-transform" />
+              </Link>
+
+              <Link
                 to="/analytics"
                 className="p-2 rounded-lg bg-primary-100 dark:bg-primary-900/30 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors group"
                 title="View Analytics"
               >
                 <ApperIcon name="BarChart3" className="w-4 h-4 sm:w-5 sm:h-5 text-primary-600 group-hover:scale-110 transition-transform" />
               </Link>
-
               <button
                 onClick={toggleDarkMode}
                 className="p-2 rounded-lg bg-surface-100 dark:bg-surface-700 hover:bg-surface-200 dark:hover:bg-surface-600 transition-colors"
@@ -233,11 +240,11 @@ let reminderCount = 0
             </div>
           </div>
         </div>
-
-        {/* Task Management Interface */}
-<MainFeature 
+{/* Task Management Interface */}
+        <MainFeature 
           tasks={tasks} 
           setTasks={setTasks}
+          categories={categories || []}
           categories={categories || []}
           stats={stats}
           setStats={setStats}

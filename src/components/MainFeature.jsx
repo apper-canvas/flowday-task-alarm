@@ -101,12 +101,13 @@ const MainFeature = ({ tasks, setTasks, categories, stats, setStats }) => {
         }))
       }
 
-      setFormData({
+setFormData({
         title: '',
         description: '',
         priority: 'medium',
         category: 'personal',
-        dueDate: format(new Date(), 'yyyy-MM-dd\'T\'HH:mm')
+        dueDate: format(new Date(), 'yyyy-MM-dd\'T\'HH:mm'),
+        reminder: 'none'
       })
       setShowTaskForm(false)
       toast.success('Task created successfully!')

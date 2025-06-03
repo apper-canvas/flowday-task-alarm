@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import AnalyticsDashboard from './components/AnalyticsDashboard'
-
+import CalendarView from './components/CalendarView'
 const notificationService = {
   init() {
     // Initialize notification service
