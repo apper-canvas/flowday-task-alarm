@@ -17,7 +17,7 @@ const notificationService = {
   }
 }
 function App() {
-  useEffect(() => {
+useEffect(() => {
     // Initialize notification service
     notificationService.init()
     

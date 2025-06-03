@@ -533,7 +533,7 @@ const MainFeature = ({ tasks, setTasks, categories, stats, setStats }) => {
                                 </div>
 {task?.reminder && task.reminder !== 'none' && (
                                   <div className="mt-2">
-                                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getReminderColor(task)}`}>
+                                    <span className={`reminder-indicator ${getReminderColor(task)}`}>
                                       <ApperIcon name="Bell" className="w-3 h-3 mr-1" />
                                       {getReminderLabel(task.reminder)}
                                     </span>

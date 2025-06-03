@@ -14,6 +14,10 @@ const Home = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [darkMode, setDarkMode] = useState(false)
+  const [notificationPermission, setNotificationPermission] = useState(
+    typeof window !== 'undefined' && 'Notification' in window ? Notification.permission : 'denied'
+  )
+  const [pendingReminders, setPendingReminders] = useState(0)
 
   useEffect(() => {
     const loadData = async () => {
@@ -44,31 +48,47 @@ const Home = () => {
       }
     }
     
-    loadData()
-}, [])
+loadData()
+  }, [])
+
+  const handleNotificationRequest = async () => {
+    if ('Notification' in window && Notification.permission === 'default') {
+      try {
+        const permission = await Notification.requestPermission()
+        setNotificationPermission(permission)
+      } catch (error) {
+        console.error('Error requesting notification permission:', error)
+      }
+    }
+  }
 
   const checkUpcomingReminders = (updatedTasks) => {
     if (!updatedTasks || !Array.isArray(updatedTasks)) return
     
     const now = new Date()
+let reminderCount = 0
     updatedTasks.forEach(task => {
       if (task?.dueDate && task?.status !== 'completed') {
         const dueDate = new Date(task.dueDate)
         const timeDiff = dueDate.getTime() - now.getTime()
         const hoursDiff = timeDiff / (1000 * 3600)
         
-        if (hoursDiff > 0 && hoursDiff <= 1 && 'Notification' in window) {
-          if (Notification.permission === 'granted') {
+        if (hoursDiff > 0 && hoursDiff <= 1) {
+          reminderCount++
+          if ('Notification' in window && Notification.permission === 'granted') {
             new Notification(`Task Reminder: ${task.title}`, {
               body: `Due in ${Math.round(hoursDiff * 60)} minutes`,
               icon: '/favicon.ico'
             })
-          } else if (Notification.permission !== 'denied') {
-            Notification.requestPermission()
+          } else if ('Notification' in window && Notification.permission !== 'denied') {
+            Notification.requestPermission().then(permission => {
+              setNotificationPermission(permission)
+            })
           }
         }
       }
     })
+    setPendingReminders(reminderCount)
   }
 
   const toggleDarkMode = () => {
@@ -137,6 +157,39 @@ const Home = () => {
                 </div>
               </div>
 
+              {/* Notification Bell */}
+              <div className="relative">
+                <button
+                  onClick={notificationPermission !== 'granted' ? handleNotificationRequest : undefined}
+                  className={`p-2 rounded-lg transition-colors ${
+                    notificationPermission === 'granted' 
+                      ? 'bg-green-100 dark:bg-green-900/30 text-green-600' 
+                      : notificationPermission === 'denied'
+                      ? 'bg-red-100 dark:bg-red-900/30 text-red-600'
+                      : 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 hover:bg-amber-200 dark:hover:bg-amber-900/50'
+                  }`}
+                  title={
+                    notificationPermission === 'granted' 
+                      ? 'Notifications enabled' 
+                      : notificationPermission === 'denied'
+                      ? 'Notifications blocked'
+                      : 'Click to enable notifications'
+                  }
+                >
+                  <ApperIcon 
+                    name="Bell" 
+                    className={`w-4 h-4 sm:w-5 sm:h-5 notification-bell ${
+                      pendingReminders > 0 ? 'has-notifications' : ''
+                    }`} 
+                  />
+                  {pendingReminders > 0 && (
+                    <span className="notification-badge">
+                      {pendingReminders > 9 ? '9+' : pendingReminders}
+                    </span>
+                  )}
+                </button>
+              </div>
+
               <Link
                 to="/analytics"
                 className="p-2 rounded-lg bg-primary-100 dark:bg-primary-900/30 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors group"
@@ -184,7 +237,7 @@ const Home = () => {
         {/* Task Management Interface */}
 <MainFeature 
           tasks={tasks} 
-          setTasks={setTasks} 
+          setTasks={setTasks}
           categories={categories || []}
           stats={stats}
           setStats={setStats}
