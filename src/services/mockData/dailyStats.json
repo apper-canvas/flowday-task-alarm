@@ -1,0 +1,92 @@
+[
+  {
+    "date": "2024-12-19",
+    "tasksCreated": 12,
+    "tasksCompleted": 4,
+    "completionRate": 33.33
+  },
+  {
+    "date": "2024-12-18",
+    "tasksCreated": 8,
+    "tasksCompleted": 7,
+    "completionRate": 87.5
+  },
+  {
+    "date": "2024-12-17",
+    "tasksCreated": 10,
+    "tasksCompleted": 8,
+    "completionRate": 80.0
+  },
+  {
+    "date": "2024-12-16",
+    "tasksCreated": 6,
+    "tasksCompleted": 5,
+    "completionRate": 83.33
+  },
+  {
+    "date": "2024-12-15",
+    "tasksCreated": 9,
+    "tasksCompleted": 6,
+    "completionRate": 66.67
+  },
+  {
+    "date": "2024-12-14",
+    "tasksCreated": 7,
+    "tasksCompleted": 7,
+    "completionRate": 100.0
+  },
+  {
+    "date": "2024-12-13",
+    "tasksCreated": 11,
+    "tasksCompleted": 9,
+    "completionRate": 81.82
+  },
+  {
+    "date": "2024-12-12",
+    "tasksCreated": 5,
+    "tasksCompleted": 4,
+    "completionRate": 80.0
+  },
+  {
+    "date": "2024-12-11",
+    "tasksCreated": 8,
+    "tasksCompleted": 6,
+    "completionRate": 75.0
+  },
+  {
+    "date": "2024-12-10",
+    "tasksCreated": 13,
+    "tasksCompleted": 10,
+    "completionRate": 76.92
+  },
+  {
+    "date": "2024-12-09",
+    "tasksCreated": 4,
+    "tasksCompleted": 4,
+    "completionRate": 100.0
+  },
+  {
+    "date": "2024-12-08",
+    "tasksCreated": 9,
+    "tasksCompleted": 7,
+    "completionRate": 77.78
+  },
+  {
+    "date": "2024-12-07",
+    "tasksCreated": 6,
+    "tasksCompleted": 5,
+    "completionRate": 83.33
+  },
+  {
+    "date": "2024-12-06",
+    "tasksCreated": 10,
+    "tasksCompleted": 8,
+    "completionRate": 80.0
+  },
+  {
+    "date": "2024-12-05",
+    "tasksCreated": 7,
+    "tasksCompleted": 6,
+    "completionRate": 85.71
+  }
+]

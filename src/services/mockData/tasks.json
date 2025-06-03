@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1701234567890,
+    "title": "Review quarterly financial reports",
+    "description": "Analyze Q4 financial performance and prepare summary for stakeholders",
+    "status": "pending",
+    "priority": "high",
+    "dueDate": "2024-12-19T10:00:00.000Z",
+    "createdAt": "2024-12-19T08:00:00.000Z",
+    "completedAt": null,
+    "category": "work"
+  },
+  {
+    "id": 1701234567891,
+    "title": "Complete morning workout routine",
+    "description": "30-minute cardio session followed by strength training",
+    "status": "completed",
+    "priority": "medium",
+    "dueDate": "2024-12-19T07:00:00.000Z",
+    "createdAt": "2024-12-19T06:30:00.000Z",
+    "completedAt": "2024-12-19T07:30:00.000Z",
+    "category": "personal"
+  },
+  {
+    "id": 1701234567892,
+    "title": "Prepare presentation for client meeting",
+    "description": "Create slides for new product demo and practice presentation",
+    "status": "pending",
+    "priority": "high",
+    "dueDate": "2024-12-19T14:00:00.000Z",
+    "createdAt": "2024-12-19T09:00:00.000Z",
+    "completedAt": null,
+    "category": "work"
+  },
+  {
+    "id": 1701234567893,
+    "title": "Buy groceries for dinner",
+    "description": "Get ingredients for pasta dinner: tomatoes, basil, parmesan, pasta",
+    "status": "pending",
+    "priority": "medium",
+    "dueDate": "2024-12-19T17:00:00.000Z",
+    "createdAt": "2024-12-19T12:00:00.000Z",
+    "completedAt": null,
+    "category": "personal"
+  },
+  {
+    "id": 1701234567894,
+    "title": "Call dentist to schedule appointment",
+    "description": "Schedule routine cleaning and checkup for next month",
+    "status": "completed",
+    "priority": "low",
+    "dueDate": "2024-12-19T15:30:00.000Z",
+    "createdAt": "2024-12-19T11:00:00.000Z",
+    "completedAt": "2024-12-19T13:45:00.000Z",
+    "category": "personal"
+  },
+  {
+    "id": 1701234567895,
+    "title": "Update project documentation",
+    "description": "Document recent changes and update API specifications",
+    "status": "pending",
+    "priority": "medium",
+    "dueDate": "2024-12-19T16:00:00.000Z",
+    "createdAt": "2024-12-19T13:00:00.000Z",
+    "completedAt": null,
+    "category": "work"
+  },
+  {
+    "id": 1701234567896,
+    "title": "Read chapter 5 of productivity book",
+    "description": "Continue reading 'Deep Work' and take notes on key concepts",
+    "status": "pending",
+    "priority": "low",
+    "dueDate": "2024-12-19T20:00:00.000Z",
+    "createdAt": "2024-12-19T14:00:00.000Z",
+    "completedAt": null,
+    "category": "personal"
+  },
+  {
+    "id": 1701234567897,
+    "title": "Send follow-up emails to prospects",
+    "description": "Follow up with 5 potential clients from last week's networking event",
+    "status": "completed",
+    "priority": "high",
+    "dueDate": "2024-12-19T11:00:00.000Z",
+    "createdAt": "2024-12-19T08:30:00.000Z",
+    "completedAt": "2024-12-19T10:45:00.000Z",
+    "category": "work"
+  },
+  {
+    "id": 1701234567898,
+    "title": "Water plants and check garden",
+    "description": "Water indoor plants and check outdoor garden for winter preparations",
+    "status": "pending",
+    "priority": "low",
+    "dueDate": "2024-12-19T18:00:00.000Z",
+    "createdAt": "2024-12-19T16:00:00.000Z",
+    "completedAt": null,
+    "category": "personal"
+  },
+  {
+    "id": 1701234567899,
+    "title": "Review team performance metrics",
+    "description": "Analyze team productivity data and prepare feedback for weekly standup",
+    "status": "pending",
+    "priority": "medium",
+    "dueDate": "2024-12-19T12:00:00.000Z",
+    "createdAt": "2024-12-19T09:30:00.000Z",
+    "completedAt": null,
+    "category": "work"
+  },
+  {
+    "id": 1701234567900,
+    "title": "Plan weekend hiking trip",
+    "description": "Research trails, check weather, and pack gear for Saturday's hike",
+    "status": "pending",
+    "priority": "low",
+    "dueDate": "2024-12-19T19:00:00.000Z",
+    "createdAt": "2024-12-19T15:00:00.000Z",
+    "completedAt": null,
+    "category": "personal"
+  },
+  {
+    "id": 1701234567901,
+    "title": "Backup important files",
+    "description": "Create backup of work files and personal photos to cloud storage",
+    "status": "pending",
+    "priority": "medium",
+    "dueDate": "2024-12-19T21:00:00.000Z",
+    "createdAt": "2024-12-19T17:00:00.000Z",
+    "completedAt": null,
+    "category": "other"
+  },
+  {
+    "id": 1701234567902,
+    "title": "Organize desk and workspace",
+    "description": "Clean and organize home office desk for better productivity",
+    "status": "completed",
+    "priority": "low",
+    "dueDate": "2024-12-19T09:00:00.000Z",
+    "createdAt": "2024-12-19T07:00:00.000Z",
+    "completedAt": "2024-12-19T08:30:00.000Z",
+    "category": "personal"
+  },
+  {
+    "id": 1701234567903,
+    "title": "Review investment portfolio",
+    "description": "Check investment performance and rebalance if needed",
+    "status": "pending",
+    "priority": "medium",
+    "dueDate": "2024-12-19T22:00:00.000Z",
+    "createdAt": "2024-12-19T18:00:00.000Z",
+    "completedAt": null,
+    "category": "other"
+  },
+  {
+    "id": 1701234567904,
+    "title": "Practice Spanish vocabulary",
+    "description": "Complete daily Spanish lesson and review new vocabulary words",
+    "status": "pending",
+    "priority": "low",
+    "dueDate": "2024-12-19T20:30:00.000Z",
+    "createdAt": "2024-12-19T19:00:00.000Z",
+    "completedAt": null,
+    "category": "personal"
+  }
+]

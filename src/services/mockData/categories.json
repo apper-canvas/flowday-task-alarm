@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "work",
+    "color": "#3b82f6",
+    "icon": "Briefcase"
+  },
+  {
+    "id": 2,
+    "name": "personal",
+    "color": "#10b981",
+    "icon": "User"
+  },
+  {
+    "id": 3,
+    "name": "health",
+    "color": "#f59e0b",
+    "icon": "Heart"
+  },
+  {
+    "id": 4,
+    "name": "finance",
+    "color": "#8b5cf6",
+    "icon": "DollarSign"
+  },
+  {
+    "id": 5,
+    "name": "education",
+    "color": "#06b6d4",
+    "icon": "BookOpen"
+  },
+  {
+    "id": 6,
+    "name": "home",
+    "color": "#f97316",
+    "icon": "Home"
+  },
+  {
+    "id": 7,
+    "name": "shopping",
+    "color": "#ec4899",
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 8,
+    "name": "social",
+    "color": "#84cc16",
+    "icon": "Users"
+  },
+  {
+    "id": 9,
+    "name": "travel",
+    "color": "#14b8a6",
+    "icon": "MapPin"
+  },
+  {
+    "id": 10,
+    "name": "other",
+    "color": "#64748b",
+    "icon": "MoreHorizontal"
+  }
+]
