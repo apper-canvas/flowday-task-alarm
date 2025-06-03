@@ -27,6 +27,47 @@ const MainFeature = ({ tasks, setTasks, categories, stats, setStats }) => {
     high: 'AlertTriangle',
     medium: 'Clock',
     low: 'CheckCircle'
+}
+
+  const getReminderColor = (task) => {
+    if (!task?.reminder || task.reminder === 'none') return ''
+    
+    const now = new Date()
+    const dueDate = new Date(task.dueDate)
+    const timeDiff = dueDate.getTime() - now.getTime()
+    
+    // Convert reminder time to milliseconds
+    const reminderMs = {
+      '5min': 5 * 60 * 1000,
+      '15min': 15 * 60 * 1000,
+      '30min': 30 * 60 * 1000,
+      '1hour': 60 * 60 * 1000,
+      '2hours': 2 * 60 * 60 * 1000,
+      '1day': 24 * 60 * 60 * 1000
+    }
+    
+    const reminderTime = reminderMs[task.reminder] || 0
+    
+    if (timeDiff <= reminderTime) {
+      return 'text-red-600 bg-red-100 dark:bg-red-900/30'
+    } else if (timeDiff <= reminderTime * 2) {
+      return 'text-amber-600 bg-amber-100 dark:bg-amber-900/30'
+    }
+    
+    return 'text-blue-600 bg-blue-100 dark:bg-blue-900/30'
+  }
+
+  const getReminderLabel = (reminder) => {
+    const labels = {
+      '5min': '5 minutes before',
+      '15min': '15 minutes before',
+      '30min': '30 minutes before',
+      '1hour': '1 hour before',
+      '2hours': '2 hours before',
+      '1day': '1 day before'
+    }
+    
+    return labels[reminder] || reminder
   }
 
   const filteredTasks = tasks?.filter(task => {
@@ -474,7 +515,7 @@ const MainFeature = ({ tasks, setTasks, categories, stats, setStats }) => {
                                     {task.description}
                                   </p>
                                 )}
-                                <div className="flex items-center space-x-4 mt-2">
+<div className="flex items-center space-x-4 mt-2">
                                   <span className="flex items-center space-x-1 text-xs text-surface-500">
                                     <ApperIcon name={priorityIcons[task?.priority] || 'Clock'} className="w-3 h-3" />
                                     <span className="capitalize">{task?.priority}</span>
@@ -490,6 +531,14 @@ const MainFeature = ({ tasks, setTasks, categories, stats, setStats }) => {
                                     </span>
                                   )}
                                 </div>
+{task?.reminder && task.reminder !== 'none' && (
+                                  <div className="mt-2">
+                                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getReminderColor(task)}`}>
+                                      <ApperIcon name="Bell" className="w-3 h-3 mr-1" />
+                                      {getReminderLabel(task.reminder)}
+                                    </span>
+                                  </div>
+                                )}
                               </div>
 
                               <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">

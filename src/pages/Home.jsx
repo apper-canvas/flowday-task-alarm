@@ -6,6 +6,7 @@ import ApperIcon from '../components/ApperIcon'
 import taskService from '../services/api/taskService'
 import categoryService from '../services/api/categoryService'
 import { format, isToday } from 'date-fns'
+
 const Home = () => {
   const [tasks, setTasks] = useState([])
   const [categories, setCategories] = useState([])
@@ -44,13 +45,36 @@ const Home = () => {
     }
     
     loadData()
-  }, [])
+}, [])
+
+  const checkUpcomingReminders = (updatedTasks) => {
+    if (!updatedTasks || !Array.isArray(updatedTasks)) return
+    
+    const now = new Date()
+    updatedTasks.forEach(task => {
+      if (task?.dueDate && task?.status !== 'completed') {
+        const dueDate = new Date(task.dueDate)
+        const timeDiff = dueDate.getTime() - now.getTime()
+        const hoursDiff = timeDiff / (1000 * 3600)
+        
+        if (hoursDiff > 0 && hoursDiff <= 1 && 'Notification' in window) {
+          if (Notification.permission === 'granted') {
+            new Notification(`Task Reminder: ${task.title}`, {
+              body: `Due in ${Math.round(hoursDiff * 60)} minutes`,
+              icon: '/favicon.ico'
+            })
+          } else if (Notification.permission !== 'denied') {
+            Notification.requestPermission()
+          }
+        }
+      }
+    })
+  }
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
     document.documentElement.classList.toggle('dark')
   }
-
   const progressPercentage = stats.total > 0 ? (stats.completed / stats.total) * 100 : 0
 
   if (loading) {
@@ -158,12 +182,15 @@ const Home = () => {
         </div>
 
         {/* Task Management Interface */}
-        <MainFeature 
+<MainFeature 
           tasks={tasks} 
           setTasks={setTasks} 
           categories={categories || []}
           stats={stats}
           setStats={setStats}
+          onTaskUpdate={(updatedTasks) => {
+            checkUpcomingReminders(updatedTasks)
+          }}
         />
       </main>
     </div>

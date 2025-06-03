@@ -16,12 +16,13 @@ const taskService = {
     return task ? { ...task } : null
   },
 
-  async create(taskData) {
+async create(taskData) {
     await delay(400)
     const newTask = {
       ...taskData,
       id: Date.now(),
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
+      reminder: taskData.reminder || 'none'
     }
     tasks.push(newTask)
     return { ...newTask }
